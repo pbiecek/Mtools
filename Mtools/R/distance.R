@@ -1,4 +1,4 @@
-#' Distances between two coordinates
+#' Distances between two geo-coordinates
 #'
 #' This function is just a copy of javascript version available on
 #' https://www.geodatasource.com/developers/javascript.
@@ -12,7 +12,8 @@
 #' @param lon2 Latitude and Longitude of point 2 (in decimal degrees)
 #' @param unit 'M' for miles (default), 'K' for kilometers, 'N' for nautical miles
 #'
-#' @return
+#' @return Distance betwen two points
+#'
 #' @export
 distance <- function(lat1, lon1, lat2, lon2, unit) {
   radlat1 <- pi * lat1/180
