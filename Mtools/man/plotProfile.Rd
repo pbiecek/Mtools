@@ -4,14 +4,16 @@
 \alias{plotProfile}
 \title{Plot profile with vioplots}
 \usage{
-plotProfile(data, uid, sort.max = TRUE)
+plotProfile(dataWide, uid, sort.max = TRUE, log = TRUE)
 }
 \arguments{
-\item{data}{A data.frame in the long format with columns id, variable, value}
+\item{dataWide}{A data.frame in the wide format with columns id, variable, value}
 
 \item{uid}{an interesting id to be marked}
 
 \item{sort.max}{shall variables be sorted along max value?}
+
+\item{log}{shall the log scale be applied?}
 }
 \value{
 gg object
