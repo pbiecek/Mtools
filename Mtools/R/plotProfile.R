@@ -11,6 +11,7 @@
 #'
 #' @export
 plotProfile <- function(data, uid, sort.max = TRUE) {
+  colnames(data) <- c("id", "variable", "value")
   if (sort.max)
     data$variable <- reorder(data$variable, data$value, max, na.rm=TRUE)
 
