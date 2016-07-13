@@ -15,6 +15,6 @@ plotProfile_content(data, uid)
 gg object
 }
 \description{
-This function ggplots number of consumed hours of content per content
+This function ggplots number of consumed hours of content per content title
 }
 
