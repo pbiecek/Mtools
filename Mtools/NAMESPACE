@@ -2,4 +2,5 @@
 
 export(distance)
 export(distanceZIP)
+export(plotProfile)
 export(plotZIP)
