@@ -24,11 +24,11 @@ plotProfile <- function(dataWide, uid, sort.max = TRUE, log=TRUE) {
                    mean(dataWide[,as.character(selected$variable[i])] <= selected$value[i], na.rm = TRUE))/2,1)
   }
 
-  max_y <- max(data$value, na.rm = TRUE)
+  max_y <- max(data$value, na.rm = TRUE)*15
   pl <- ggplot(data, aes(x=variable, value+log)) +
     geom_violin(fill="grey", color="grey", scale="width") +
     geom_point(data=selected, size=8, aes(color=quant), shape="I") +
-    geom_text(data=selected, aes(label=paste0(quant, "%"), color=quant, y=max_y, size=quant), vjust=0.5, hjust=.5) +
+    geom_text(data=selected, aes(label=paste0(quant, "%"), color=quant, y=max_y, size=quant), vjust=0.5, hjust=1) +
     theme_classic() + coord_flip() + xlab("") + ylab("") + theme(axis.text.y = element_text(size=12), legend.position="none")+
     scale_colour_gradient(low="green", high="red", limits=c(0,100)) +
     ggtitle(paste("Profile for id:",uid))
