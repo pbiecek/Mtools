@@ -18,5 +18,7 @@ plotProfile_time <- function(data, uid) {
     summarise(play_time = sum(elapsed_time_ms-pause_or_stop_time_ms)/1000/60/60)
 
   ggplot(hours, aes(as.Date(day), play_time, fill=user_id_at_time_of_access)) +
-    geom_bar(stat="identity") + theme(legend.position="none")
+    geom_bar(stat="identity") + theme(legend.position="none")+
+    theme_classic() + xlab("") + ylab("") +
+    ggtitle(paste("Profile for id:",uid))
 }
