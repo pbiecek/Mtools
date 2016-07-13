@@ -14,10 +14,10 @@ plotProfile_time <- function(data, uid) {
   hours <- tmp %>%
     mutate(day = substr(request_date_et, 1, 10),
            dow = wday(day, label=T)) %>%
-    group_by(day, dow,user_id_at_time_of_access) %>%
+    group_by(day, dow) %>%
     summarise(play_time = sum(elapsed_time_ms-pause_or_stop_time_ms)/1000/60/60)
 
-  ggplot(hours, aes(as.Date(day), play_time, fill=user_id_at_time_of_access)) +
+  ggplot(hours, aes(as.Date(day), play_time, fill=dow)) +
     geom_bar(stat="identity") +
     theme_classic() + xlab("Date") + ylab("Hours of consumed content per day") +theme(legend.position="none")+
     ggtitle(paste("Profile for id:",uid))
