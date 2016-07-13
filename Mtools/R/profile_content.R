@@ -22,7 +22,7 @@ plotProfile_content <- function(data, uid) {
   ggplot(hours, aes(content_title, play_time, fill=dow)) +
     geom_bar(stat="identity") +
     theme_classic() + theme(legend.position="none") +
-    coord_flip() + xlab("") + ylab("Hours of consumed content")+
+    coord_flip() + xlab("") + ylab("Consumed content [hours]")+
     ggtitle(paste("Top 25 contents\nProfile for id:",uid))
 
 }
