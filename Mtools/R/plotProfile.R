@@ -10,8 +10,8 @@
 #' @return gg object
 #'
 #' @export
-plotProfile <- function(data, uid, sort.max = TRUE) {
-  colnames(data) <- c("id", "variable", "value")
+plotProfile <- function(dataWide, uid, sort.max = TRUE) {
+  data <- gather(dataWide, variable, value, -id)
   if (sort.max)
     data$variable <- reorder(data$variable, data$value, max, na.rm=TRUE)
 
@@ -19,8 +19,8 @@ plotProfile <- function(data, uid, sort.max = TRUE) {
   selected$quant <- 0
   for (i in 1:nrow(selected)) {
     selected$quant[i] <-
-      round(100*(mean(data[,as.character(selected$variable[i])] < selected$value[i], na.rm = TRUE) +
-                   mean(data[,as.character(selected$variable[i])] <= selected$value[i], na.rm = TRUE))/2,1)
+      round(100*(mean(dataWide[,as.character(selected$variable[i])] < selected$value[i], na.rm = TRUE) +
+                   mean(dataWide[,as.character(selected$variable[i])] <= selected$value[i], na.rm = TRUE))/2,1)
   }
 
   ggplot(data, aes(x=variable, value)) +
