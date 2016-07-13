@@ -19,6 +19,6 @@ plotProfile_time <- function(data, uid) {
 
   ggplot(hours, aes(as.Date(day), play_time, fill=user_id_at_time_of_access)) +
     geom_bar(stat="identity") +
-    theme_classic() + xlab("") + ylab("") +theme(legend.position="none")+
+    theme_classic() + xlab("Date") + ylab("Hours of consumed content per day") +theme(legend.position="none")+
     ggtitle(paste("Profile for id:",uid))
 }
