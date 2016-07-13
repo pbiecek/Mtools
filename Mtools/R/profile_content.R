@@ -1,6 +1,6 @@
 #' Plot content consumed with barplots
 #'
-#' This function ggplots number of consumed hours of content per content
+#' This function ggplots number of consumed hours of content per content title
 #'
 #' @param data A list of data.frames with the 'media' format
 #' @param uid an interesting id to be marked
