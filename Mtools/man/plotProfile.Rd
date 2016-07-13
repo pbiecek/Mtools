@@ -4,12 +4,14 @@
 \alias{plotProfile}
 \title{Plot profile with vioplots}
 \usage{
-plotProfile(data, uid)
+plotProfile(data, uid, sort.max = TRUE)
 }
 \arguments{
 \item{data}{A data.frame in the long format with columns id, variable, value}
 
 \item{uid}{an interesting id to be marked}
+
+\item{sort.max}{shall variables be sorted along max value?}
 }
 \value{
 gg object
