@@ -9,7 +9,7 @@
 #'
 #' @export
 plotProfile_time <- function(data, uid) {
-  tmp <- dat[[uid]]
+  tmp <- data[[uid]]
 
   hours <- tmp %>%
     mutate(day = substr(request_date_et, 1, 10),
@@ -18,7 +18,7 @@ plotProfile_time <- function(data, uid) {
     summarise(play_time = sum(elapsed_time_ms-pause_or_stop_time_ms)/1000/60/60)
 
   ggplot(hours, aes(as.Date(day), play_time, fill=user_id_at_time_of_access)) +
-    geom_bar(stat="identity") + theme(legend.position="none")+
-    theme_classic() + xlab("") + ylab("") +
+    geom_bar(stat="identity") +
+    theme_classic() + xlab("") + ylab("") +theme(legend.position="none")+
     ggtitle(paste("Profile for id:",uid))
 }
