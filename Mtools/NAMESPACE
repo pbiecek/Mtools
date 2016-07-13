@@ -3,5 +3,6 @@
 export(distance)
 export(distanceZIP)
 export(plotProfile)
+export(plotProfile_place)
 export(plotProfile_time)
 export(plotZIP)

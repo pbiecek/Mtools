@@ -8,7 +8,7 @@
 #' @return gg object
 #'
 #' @export
-plotProfile_time <- function(data, uid) {
+plotProfile_place <- function(data, uid) {
   tmp <- data[[uid]]
   tmp <- cbind(tmp, zipcode[tmp$determined_location_zip_code,])
 
