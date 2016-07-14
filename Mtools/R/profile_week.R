@@ -21,8 +21,8 @@ plotProfile_week <- function(data, uid) {
   ggplot(hours, aes(as.numeric(as.character(hour)), play_time, fill=dow)) +
     geom_bar(stat="identity") +
     theme_classic() + theme(legend.position="none") +
-     xlab("Hour of wathich") + ylab("Consumed content [hours]")+
-    facet_grid(~dow) + scale_x_continuous(breaks = c(0,6,12,18,24)) +coord_flip() +
+     xlab("Hour of streaming") + ylab("Consumed content [hours]")+
+    facet_wrap(~dow) + scale_x_continuous(breaks = c(0,6,12,18,24)) +coord_flip() +
     ggtitle(paste("Time during the day \nProfile for id:",uid))
 
 }
