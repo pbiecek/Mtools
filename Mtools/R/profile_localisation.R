@@ -9,8 +9,6 @@
 #'
 #' @export
 plotProfile_place <- function(data, uid) {
-  data(zipcode)
-  rownames(zipcode) <- zipcode$zip
   tmp <- data[[uid]]
   tmp <- cbind(tmp, zipcode[tmp$determined_location_zip_code,])
 

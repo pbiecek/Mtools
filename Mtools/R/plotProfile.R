@@ -12,7 +12,7 @@
 #'
 #' @export
 plotProfile <- function(dataWide, uid, sort.max = TRUE, log=TRUE) {
-  data <- gather(dataWide, variable, value, -id)
+  data <- gather(dataWide, variable, value, -uid)
   if (sort.max)
     data$variable <- reorder(data$variable, data$value, max, na.rm=TRUE)
 
